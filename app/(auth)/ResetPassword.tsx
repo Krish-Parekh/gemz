@@ -41,8 +41,7 @@ export default function ResetPassword() {
       onSuccess: () => {
         router.push("/(auth)/Login");
       },
-      onError: (data) => {
-      },
+      onError: (_data) => {},
     },
   );
 

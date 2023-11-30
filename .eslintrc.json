@@ -17,6 +17,7 @@
   },
   "plugins": ["react", "react-native", "simple-import-sort"],
   "rules": {
+    "react-native/no-single-element-style-arrays": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-non-null-assertion": "off",

@@ -1,7 +1,9 @@
 import React, { createContext, useCallback, useEffect, useState } from "react";
 import { Alert, AppState, type AppStateStatus } from "react-native";
+import * as SecureStore from "expo-secure-store";
+
 import { useAuthServerMutation } from "../hooks/useMutation";
-import * as SecureStore from 'expo-secure-store';
+
 import { decode } from "base-64";
 
 const AuthContext = createContext<any>(null);
@@ -14,8 +16,8 @@ async function save(key: string, value: string) {
 
 // Function to retrieve the value for a key from SecureStore
 async function getValueFor(key: string) {
-  let result:any = await SecureStore.getItemAsync(key);
-  return result
+  const result: any = await SecureStore.getItemAsync(key);
+  return result;
 }
 
 const REFRESH_OFFSET = 300;
@@ -149,7 +151,6 @@ const AuthProvider = ({ children }: any) => {
       }
 
       // ... (Check and set other state properties like refreshToken)
-
     };
 
     // Initialize the authentication state

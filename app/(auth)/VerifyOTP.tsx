@@ -56,9 +56,11 @@ export default function VerifyOTP() {
                   authenticated: true,
                   accessToken: access_token,
                 });
-                authContext.saveTokenToSecureStore("accessToken",access_token)
-                authContext.saveTokenToSecureStore("refreshToken",access_token)
-
+                authContext.saveTokenToSecureStore("accessToken", access_token);
+                authContext.saveTokenToSecureStore(
+                  "refreshToken",
+                  access_token,
+                );
               })();
               router.push(next_path as any);
               break;
